@@ -42,11 +42,11 @@
 
 /*for event tracking "HAPPY"*/ 
 	 document.addEventListener("HAPPY", function(happy) { 
-		console.log("Happy"); //console print 
+		console.log("HAPPY"); //console print 
 	});
 /*for event tracking "SAD"*/ 
 	document.addEventListener("SAD", function(sad) { 
-		console.log("sad"); //console print
+		console.log("SAD"); //console print
 	});
 /*for event tracking "MOOD"*/ 
 	document.addEventListener("MOOD", function(sad) { 
