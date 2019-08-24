@@ -1,0 +1,50 @@
+JavaScript is a single-threaded programming language single-threaded runtime, It has a single call stack, and it can do one thing at a time that's
+what a single thread means the program can run on a piece of code at a time.
+
+If we call a function 
+    function foo(){
+        return foo();
+    }
+It will become an endless
+
+Synchronous like jquery or Ajax using.
+    var foo = $.getSync('//foo.com');
+    var bar = $.getSync('/bar.com');
+It will execute secequence by secequence thats why it will take time.
+
+If we use Synchronous code in the browser, it will take time. It can't execute another function while one task is processing; it will wait for the result
+of the current execution. For this kind of delay, we can avoid by using Asynchronous method.
+
+Asynchronous callback
+
+#program 
+!-------------------------------------!
+    console.log('hi');
+    setTimeout(function(){
+        console.log('there');
+    },5000);
+    console.log('Neoito');
+!-------------------------------------!    
+it will retun the output as 
+    hi
+    Neoito
+    there
+    
+above program illustrated 
+    we can divide the above process as for they are 
+        *stack
+        *webapis
+        *eventloop
+        *task queue
+    The stack contains the current task.
+    webapis is a builtin api in the browser.
+    task queue is stored what is next task to do
+    eventloop is the loop it pushes the queue task works to stack.
+    
+In the program first, the console log is print as regular. Then its read the next line its found setTimeout function then they understand it is a builtin function
+and it's move to webapis and wait for a given time, Here we set 5Secound. On the same waiting time its read the next line and print the console log as 'Neoito'
+After the 5-second delay webapis will send to task queue task then event loop will check is there is any work in the stack. If it is empty event loop will push the first queued
+task to stack.
+
+The JavaScript runtime can only do one thing at one time it can't make an AJAX request while you're doing other code. It can't do a setTimeout
+While you're doing another code. The reason we can do things concurrently is that the browser is more than just the runtime.
