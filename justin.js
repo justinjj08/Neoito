@@ -11,7 +11,7 @@
 
 /*for a function call a randomintervel*/
   setInterval(function(){ 
-		//execute(); // call the execute function
+		execute(); // call the execute function
   }, randomInterval*1000);
  
 /* for creating random number*/ 
